@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     java
-    id("io.izzel.taboolib") version "2.0.11"
+    id("io.izzel.taboolib") version "2.0.30"
     id("org.jetbrains.kotlin.jvm") version "1.8.22"
     kotlin("plugin.serialization") version "1.8.22"
 }
@@ -18,25 +18,17 @@ taboolib {
     env {
         // 安装模块
         install(
-            "minecraft-chat",
-            "basic-configuration",
-            "bukkit-util",
-            "bukkit-xseries",
-            "bukkit-xseries-item",
-            "bukkit-xseries-skull",
-            "bukkit-ui",
-            "platform-bukkit"
+            Basic,
+            Bukkit,
+            BukkitUtil,
+            MinecraftChat,
+            BukkitUI
         )
-        forceDownloadInDev = false
-        repoTabooLib = "http://mcstarrysky.com:8081/repository/releases/"
     }
-    version { taboolib = "6.2.0-beta20-dev" }
+    version { taboolib = "6.2.4-99fb800" }
 }
 
 repositories {
-    maven("http://mcstarrysky.com:8081/repository/releases/") {
-        isAllowInsecureProtocol = true
-    }
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
 }
